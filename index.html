@@ -1,1 +1,34 @@
-
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>AI projekt – Nemovitosti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <div class="container">
+ 
+        <h1>🏠 AI – Predikce cen nemovitostí</h1>
+ 
+        <p>
+            Tento projekt využívá umělou inteligenci k odhadu ceny nemovitosti
+            na základě velikosti, počtu pokojů a stáří.
+</p>
+ 
+        <h2>🔢 Vyzkoušej predikci</h2>
+ 
+        <input type="number" id="size" placeholder="Velikost (m²)">
+<input type="number" id="rooms" placeholder="Počet pokojů">
+<input type="number" id="age" placeholder="Stáří (roky)">
+ 
+        <button onclick="predict()">Spočítat cenu</button>
+ 
+        <h2 id="result"></h2>
+ 
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
