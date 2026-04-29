@@ -1,46 +1,98 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
- 
-    /* 🌄 TVOJE POZADÍ */
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShd355TgCFAPlkvYJiYq6hO2OFoRHLDGZQdg&s");
- 
+    font-family: 'Poppins', sans-serif;
+
+    /* lehčí overlay místo těžkého filtru */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.75)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShd355TgCFAPlkvYJiYq6hO2OFoRHLDGZQdg&s");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
- 
+
+    /* ❌ fixed může lagovat na mobilu → pryč */
+    /* background-attachment: fixed; */
+
     color: white;
 }
- 
+
 .container {
     text-align: center;
-    margin-top: 80px;
-    background: rgba(0,0,0,0.6);
-    padding: 30px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
+    margin: 60px auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 480px;
+
+    background: rgba(0,0,0,0.7);
+    border-radius: 16px;
+
+    /* ❌ blur je náročný → nahradíme jemným stínem */
+    /* backdrop-filter: blur(8px); */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
- 
-input {
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
+
+.subtitle {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
- 
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    background: #00c3ff;
+
+.input-box {
+    text-align: left;
+    margin: 12px 0;
+}
+
+label {
+    font-size: 13px;
+    color: #aaa;
+}
+
+input,
+select {
+    padding: 12px;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    font-size: 14px;
 }
- 
+
+/* lepší UX */
+input:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #00c3ff;
+}
+
+button {
+    padding: 12px;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+
+    background: linear-gradient(45deg, #00c3ff, #00ffcc);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* lehčí animace (lepší výkon než scale 1.05) */
 button:hover {
-    background: #0099cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #00ffcc;
+}
+
+.info {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #bbb;
 }
