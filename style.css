@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 
+    /* lehčí overlay místo těžkého filtru */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.75)),
     url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShd355TgCFAPlkvYJiYq6hO2OFoRHLDGZQdg&s");
 
@@ -10,48 +11,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
+    /* ❌ fixed může lagovat na mobilu → pryč */
+    /* background-attachment: fixed; */
+
     color: white;
 }
 
-/* 🧱 HLAVNÍ LAYOUT */
 .container {
-    display: flex;
-    gap: 25px;
-    margin: 50px auto;
-    padding: 20px;
-    width: 95%;
-    max-width: 1000px;
-}
-
-/* 📥 LEVÁ STRANA (form) */
-.left {
-    flex: 1;
-    background: rgba(0,0,0,0.7);
+    text-align: center;
+    margin: 60px auto;
     padding: 25px;
+    width: 90%;
+    max-width: 480px;
+
+    background: rgba(0,0,0,0.7);
     border-radius: 16px;
+
+    /* ❌ blur je náročný → nahradíme jemným stínem */
+    /* backdrop-filter: blur(8px); */
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* 📊 PRAVÁ STRANA (graf) */
-.right {
-    flex: 1;
-    background: rgba(0,0,0,0.7);
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 📱 RESPONSIVE (mobil) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
-/* texty */
 .subtitle {
     color: #ccc;
     font-size: 14px;
@@ -78,14 +58,13 @@ select {
     font-size: 14px;
 }
 
-/* focus efekt */
+/* lepší UX */
 input:focus,
 select:focus {
     outline: none;
     box-shadow: 0 0 0 2px #00c3ff;
 }
 
-/* tlačítko */
 button {
     padding: 12px;
     margin-top: 15px;
@@ -100,21 +79,21 @@ button {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* lehčí animace (lepší výkon než scale 1.05) */
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* výsledek */
 .result {
     margin-top: 20px;
     font-size: 22px;
     color: #00ffcc;
 }
 
-/* info */
 .info {
     margin-top: 25px;
     font-size: 13px;
     color: #bbb;
 }
+    
