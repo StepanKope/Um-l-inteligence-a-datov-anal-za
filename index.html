@@ -12,65 +12,50 @@
 
 <body>
 
-<div class="layout">
+<div class="container">
 
-    <!-- LEVÁ STRANA -->
-    <div class="side">
-        <iframe src="https://www.dobris-nemovitosti.cz/prodej/rodinne-domy/?hideFilter=1&idKraje%5B%5D=27&idOkres%5B%5D=3211&idMesta%5B%5D=539970"></iframe>
+    <h1>🏠 AI – Predikce cen nemovitostí</h1>
+
+    <p class="subtitle">
+        Odhad ceny pomocí jednoduchého modelu strojového učení
+    </p>
+
+    <h2>🔢 Vyzkoušej predikci</h2>
+
+    <div class="input-box">
+        <label>Velikost (m²)</label>
+        <input type="number" id="size" placeholder="Např. 75">
     </div>
 
-    <!-- STŘED -->
-    <div class="container">
+    <div class="input-box">
+        <label>Počet pokojů</label>
+        <input type="number" id="rooms" placeholder="Např. 3">
+    </div>
 
-        <h1>🏠 AI – Predikce cen nemovitostí</h1>
+    <div class="input-box">
+        <label>Stáří (roky)</label>
+        <input type="number" id="age" placeholder="Např. 10">
+    </div>
 
-        <p class="subtitle">
-            Odhad ceny pomocí jednoduchého modelu strojového učení
+    <div class="input-box">
+        <label>Lokalita</label>
+        <select id="location">
+            <option value="praha">Praha</option>
+            <option value="city">Větší město</option>
+            <option value="village">Menší město / vesnice</option>
+        </select>
+    </div>
+
+    <button onclick="predict()">🔮 Spočítat cenu</button>
+
+    <h2 id="result" class="result"></h2>
+
+    <div class="info">
+        <h3>📊 Jak to funguje?</h3>
+        <p>
+            Model využívá princip lineární regrese a odhaduje cenu na základě velikosti,
+            počtu pokojů, stáří a lokality nemovitosti.
         </p>
-
-        <h2>🔢 Vyzkoušej predikci</h2>
-
-        <div class="input-box">
-            <label>Velikost (m²)</label>
-            <input type="number" id="size" placeholder="Např. 75">
-        </div>
-
-        <div class="input-box">
-            <label>Počet pokojů</label>
-            <input type="number" id="rooms" placeholder="Např. 3">
-        </div>
-
-        <div class="input-box">
-            <label>Stáří (roky)</label>
-            <input type="number" id="age" placeholder="Např. 10">
-        </div>
-
-        <div class="input-box">
-            <label>Lokalita</label>
-            <select id="location">
-                <option value="praha">Praha</option>
-                <option value="city">Větší město</option>
-                <option value="village">Menší město / vesnice</option>
-            </select>
-        </div>
-
-        <button onclick="predict()">🔮 Spočítat cenu</button>
-
-        <h2 id="result" class="result"></h2>
-
-        <div class="info">
-            <h3>📊 Jak to funguje?</h3>
-            <p>
-                Model využívá princip lineární regrese a odhaduje cenu na základě velikosti,
-                počtu pokojů, stáří a lokality nemovitosti.
-            </p>
-        </div>
-
-    </div>
-
-    <!-- PRAVÁ STRANA -->
-    <div class="side">
-        <iframe src="https://www.thermont.cz/realizace/rezidencni-stavby"></iframe>
     </div>
 
 </div>
